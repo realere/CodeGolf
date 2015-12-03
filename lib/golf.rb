@@ -1,33 +1,21 @@
 class Golf
-  
-	def self.hole1(num)
+	def self.hole1(m)
 		a = []
-		
-		1.upto(num) do |i|
-			n = i-1
-			p = false
-			a[n] = "" 
-			if i%3<1
-				a[n]+="pling"
-				p = true
-			end
-			if i%5<1
-				a[n]+="plang"
-				p = true
-			end
-			if i%7<1
-				a[n]+="plong"
-				p = true
-			end
-			unless p
-				a[n] = i
-			end
+		p = ->(l){"pl#{l}ng"}
+
+		1.upto(m) do |j|
+			n = j-1
+			a[n] = ""
+			j%3<1 ? a[n]+= p[?i] : j
+			j%5<1 ? a[n]+= p[?a] : j
+			j%7<1 ? a[n]+= p[?o] : j
+			a[n] == "" ? a[n]=j : j
 		end
 		a
 	end
 
-	def self.hole2(string)
-		string.split(" ").map{|w| w[0]}.join("")
+	def self.hole2(s)
+		s.split(" ").map{|w|w[0]}*""
 	end
 
 end
