@@ -7,7 +7,7 @@ class Golf
 			n = j-1
 			a[n] = ""
 			h = {3=> ?i, 5=> ?a, 7=> ?o}
-			h.each{|k,v| a[n]+= p[v] if j%k<1}
+			h.map{|k,v| a[n]+= p[v] if j%k<1}
 			a[n]=j if a[n] == ""
 		end
 		a
