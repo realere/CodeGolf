@@ -1,4 +1,5 @@
 class Golf
+	
 	def self.hole1(m)
 		a = []
 		p = ->(l){"pl#{l}ng"}
