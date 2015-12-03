@@ -1,28 +1,29 @@
 class Golf
   
 	def self.hole1(num)
-		arr = []
+		a = []
 		
 		1.upto(num) do |i|
-			ppp = false
-			arr[i-1] = "" 
+			n = i-1
+			p = false
+			a[n] = "" 
 			if i%3<1
-				arr[i-1]+="pling"
-				ppp = true
+				a[n]+="pling"
+				p = true
 			end
 			if i%5<1
-				arr[i-1]+="plang"
-				ppp = true
+				a[n]+="plang"
+				p = true
 			end
 			if i%7<1
-				arr[i-1]+="plong"
-				ppp = true
+				a[n]+="plong"
+				p = true
 			end
-			unless ppp
-				arr[i-1] = i
+			unless p
+				a[n] = i
 			end
 		end
-		arr
+		a
 	end
 
 	def self.hole2(string)
