@@ -6,10 +6,10 @@ class Golf
 		1.upto(m) do |j|
 			n = j-1
 			a[n] = ""
-			j%3<1 ? a[n]+= p[?i] : j
-			j%5<1 ? a[n]+= p[?a] : j
-			j%7<1 ? a[n]+= p[?o] : j
-			a[n] == "" ? a[n]=j : j
+			a[n]+= p[?i] if j%3<1
+			a[n]+= p[?a] if j%5<1
+			a[n]+= p[?o] if j%7<1
+			a[n]=j if a[n] == ""
 		end
 		a
 	end
