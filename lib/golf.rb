@@ -6,9 +6,8 @@ class Golf
 		1.upto(m) do |j|
 			n = j-1
 			a[n] = ""
-			a[n]+= p[?i] if j%3<1
-			a[n]+= p[?a] if j%5<1
-			a[n]+= p[?o] if j%7<1
+			h = {3=> ?i, 5=> ?a, 7=> ?o}
+			h.each{|k,v| a[n]+= p[v] if j%k<1}
 			a[n]=j if a[n] == ""
 		end
 		a
